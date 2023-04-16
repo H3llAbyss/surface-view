@@ -1,6 +1,6 @@
 import pyvista as pv
 from pyvistaqt import QtInteractor
-from PyQt5.QtWidgets import QVBoxLayout,QHBoxLayout , QWidget, QApplication, QMainWindow, QPushButton
+from PyQt5.QtWidgets import QVBoxLayout, QHBoxLayout, QWidget, QApplication, QMainWindow, QPushButton
 import PyQt5
 
 from CustomWidgets.CustomWidgets import *
@@ -19,7 +19,6 @@ class PyvistaPyQtWidget(QWidget): # TODO: customize this function
 
         # Initialize the Pyvista plotter
         self.plotter = self.interactor
-
 
         self.plotter.enable_depth_peeling(10)
 
@@ -46,7 +45,7 @@ class MainWindow(QMainWindow):
 
         self.pyvista_widget = PyvistaPyQtWidget(self)
 
-        vert_layout.addWidget(self.pyvista_widget, 2)
+        vert_layout.addWidget(self.pyvista_widget, 1)
 
         self.createPointButton = QPushButton("Create Point")
         self.createPointButton.clicked.connect(self.openCreatePointWidget)
@@ -75,7 +74,7 @@ class MainWindow(QMainWindow):
         self.pyvista_widget.add_mesh(pv.Sphere(2, (3, 1, 1)), opacity=0.50, color="red")
         self.pyvista_widget.add_mesh(pv.Sphere(0.5, (3, -0.7, 1)), opacity=0.5, color="red")
 
-        main_layout.addLayout(vert_layout,2)
+        main_layout.addLayout(vert_layout, 2)
 
         self.currentEditWidget = QWidget()
 

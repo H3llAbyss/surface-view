@@ -60,6 +60,8 @@ class CreateVectorWidget(QtWidgets.QWidget):
 
 
 class ObjectWidget(QtWidgets.QWidget):
-    def __init__(self):
+
+
+    def __init__(self, *args):
         super(ObjectWidget, self).__init__()
         uic.loadUi("CustomWidgets\ObjectWidget.ui", self)
